@@ -1,11 +1,12 @@
 .description {
     display: block;
+    margin-bottom: 20px;
 }
 
 .description-title {
-    color: azure;
+    font-size: 40px;
 }
 
 .description-text {
-    color: azure;
+    font-size: 14px;
 }

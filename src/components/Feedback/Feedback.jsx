@@ -1,10 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import styles from "./Feedback.module.css";
 
+const Feedback = ({ feedback, total, positivePercentage }) => {
+    const { good, neutral, bad } = feedback;
 
-export default function Feedback() {
-    return (
-        <div>
-        </div>
-    )
-}
+  return (
+    <div className={styles['feedback-statistics']}>
+      <p>Good: {good}</p>
+        <p>Neutral: {neutral}</p>
+        <p>Bad: {bad}</p>
+        <p>Total: {total}</p>
+        <p>Positive: {positivePercentage}%</p>
+    </div>
+  );
+};
+
+export default Feedback;

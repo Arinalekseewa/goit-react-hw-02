@@ -1,16 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import styles from "./Options.module.css";
 
+const Options = ({ onLeaveFeedback, onReset, totalFeedback }) => {
+  return (
+    <div className={styles['options-list']}>
+      <button className={styles['options-item']} onClick={() => onLeaveFeedback('good')}>Good</button>
+      <button className={styles['options-item']} onClick={() => onLeaveFeedback('neutral')}>Neutral</button>
+      <button className={styles['options-item']} onClick={() => onLeaveFeedback('bad')}>Bad</button>
 
-export default function Options() {
-    return (
-        <div>
-            <ul>
-                <li>Good</li>
-                <li>Neutral</li>
-                <li>Bad</li>
-                <li>Reset</li>
-            </ul>
-        </div>
-    )
-}
+      {totalFeedback > 0 && (
+        <button className={styles['options-item']} onClick={onReset}>Reset</button>
+      )}
+    </div>
+  );
+};
+
+export default Options;
